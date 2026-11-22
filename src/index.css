@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #0a0710;
+  color: #e8e0d0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(195, 147, 43, 0.3);
+  color: #fdf3d3;
+}
+
+/* Custom scrollbar styled to fit the library theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0710;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c3932b, #6d44b0);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#d9b14a, #8a5fd6);
+}
+
+@layer utilities {
+  /* Shimmering gold text used for the site title */
+  .text-gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      #9c721f 0%,
+      #eccf6e 25%,
+      #fdf3d3 50%,
+      #eccf6e 75%,
+      #9c721f 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  .bg-radial-gold {
+    background: radial-gradient(circle at center, rgba(195, 147, 43, 0.18) 0%, transparent 70%);
+  }
+
+  .border-gold-faint {
+    border-color: rgba(217, 177, 74, 0.25);
+  }
+
+  /* Form inputs on the contact page */
+  .contact-input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(217, 177, 74, 0.25);
+    background-color: rgba(18, 13, 28, 0.7);
+    padding: 0.7rem 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #e8e0d0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .contact-input::placeholder {
+    color: rgba(247, 227, 163, 0.35);
+    font-style: italic;
+  }
+  .contact-input:focus {
+    outline: none;
+    border-color: rgba(236, 207, 110, 0.7);
+    box-shadow: 0 0 16px rgba(195, 147, 43, 0.25);
+  }
+}
